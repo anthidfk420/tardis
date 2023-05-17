@@ -31,3 +31,9 @@ systemd_services() {
 dotfiles_configure() {
 	cp -r ~/tardis/dotfiles/* ~/.config
 }
+
+# The actual script (very barebones as you can tell)
+
+aur_install && add_repos && aur_packages
+pacman_packages && systemd_services
+dotfiles_configure
